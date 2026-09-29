@@ -171,9 +171,13 @@ It remains a work in progress — and that is also part of the point.
 
 ---
 
-# Project Archive — Original README
+<br>
 
-The content below is preserved from the original repository README as part of the project's early history and first implementation stage.
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# PROJECT ARCHIVE — ORIGINAL README
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+> **Historical snapshot:** The content below is preserved from the original repository README as part of the project's early history and first implementation stage.
 
 ---
 
