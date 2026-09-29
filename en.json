@@ -1,0 +1,13 @@
+{
+    "title": "Lucky Cookie",
+    "slogan": "Find your spark. Click for today's fortune.",
+    "slogan_mobile": "Find your spark.<br>Click for today's fortune.",
+    "reveal_button": "Reveal",
+    "modal_message": "You have already opened your fortune cookie today. <strong id=\"boldText\">Come back tomorrow! 👋</strong>",
+    "share_button": "Download",
+    "view_button": "Share it!",    
+    "reveal_message": "~Take a deep breath before moving forward.~",
+    "web_share_button": "Share online",
+    "background_image": "img/bg-imgEN2.png"
+  }
+  

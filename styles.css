@@ -1,0 +1,1065 @@
+@font-face {
+  font-family: "fortuneCookie";
+  src: url("font/ExplorerFree-Regular.woff");
+}
+
+@font-face {
+  font-family: "futura";
+  src: url("font/FuturaBoldBT.woff");
+}
+
+@font-face {
+  font-family: "futura-medium";
+  src: url("font/FuturaMediumBT.woff");
+}
+
+@font-face {
+  font-family: "futura-medium-italic";
+  src: url("font/FuturaMediumItalicBT.woff");
+}
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --gradient: linear-gradient(90deg, #ee6352, #800080, #ee6352);
+}
+
+*::selection {
+  color: var(--bg-color);
+}
+
+html {
+  --bg-color: #242038d7;
+  --primary-color: #47126b;
+  --secondary-color: #6d23b6;
+  --hover-color: #ac46a1;
+  --light-color: #ea698b;
+  --white-color: #ffffff;
+  --high-color: #ffed6c;
+  --numbers-color: #fffacd;
+  --grey-color: #cacaca;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  color: #333;
+  background: #ddd;
+  background-size: 300%;
+  background-image: var(--gradient);
+  animation: bg-animation 40s infinite;
+  /*   overflow: hidden; */
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+/* * Bkg Circles */
+/* Contenedor para los círculos de fondo */
+.background-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Estilo para cada círculo */
+.circle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: move 20s infinite ease-in-out;
+  opacity: 0.5;
+}
+
+/* Círculos específicos con diferentes tamaños y posiciones iniciales */
+.circle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 15s;
+}
+
+.circle:nth-child(2) {
+  width: 400px;
+  height: 400px;
+  top: 60%;
+  left: 50%;
+  animation-duration: 20s;
+}
+
+.circle:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  top: 80%;
+  left: 80%;
+  animation-duration: 25s;
+}
+
+.circle:nth-child(4) {
+  width: 350px;
+  height: 350px;
+  top: 30%;
+  left: 70%;
+  animation-duration: 18s;
+}
+
+.circle:nth-child(5) {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 20%;
+  animation-duration: 22s;
+}
+
+.circle:nth-child(6) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+  animation-duration: 24s;
+}
+
+.circle:nth-child(7) {
+  width: 300px;
+  height: 300px;
+  top: 35%;
+  left: 5%;
+  animation-duration: 18s;
+}
+
+/* Animación de movimiento */
+@keyframes move {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -30px);
+  }
+  50% {
+    transform: translate(-20px, 30px);
+  }
+  75% {
+    transform: translate(30px, -20px);
+  }
+}
+
+/* Music */
+.music-icon img {
+  position: absolute;
+  top: 2.5rem;
+  left: 4rem;
+  width: 40px; /* Ajusta el tamaño del ícono */
+  height: 40px; /* Ajusta el tamaño del ícono */
+}
+
+
+/* * Intro */
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cat > img {
+  width: 200px;
+  margin-bottom: -5px;
+}
+
+.fortune {
+  margin: 0 0 5px 0;
+}
+
+#title-text {
+  font-family: "fortuneCookie";
+  font-weight: 200;
+  height: 3rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 7px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.slogan {
+  font-size: 1rem;
+  color: var(--high-color);
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+}
+
+#slogan-desktop {
+  display: block;
+  font-family: "futura-medium-italic";
+}
+
+#slogan-mobile {
+  display: none;
+  font-family: "futura-medium-italic";
+}
+
+.phrase {
+  margin-top: 70px;
+  max-width: 50rem;
+  min-height: 8rem;
+  text-align: center;
+}
+
+#fortune-text {
+  display: none;
+  height: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  /* padding-bottom: 5rem; */
+}
+
+#reveal-message {
+  font-size: 1.2rem;
+  height: 2rem;
+  color: #c7c6c6;
+  font-style: italic;
+  padding-bottom: 5rem;
+  animation: breathe 4s infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* ! numbers */
+.numbers {
+  font-size: 0.9rem;
+  color: var(--numbers-color);
+  display: flex;
+  justify-content: center;
+}
+
+#fortune-numbers {
+  display: flex;
+  gap: 1rem; /* Ajusta el valor según sea necesario */
+}
+
+/* Añadir esto a tu archivo CSS */
+.number-style {
+  font-size: 0.9rem;
+  color: var(--numbers-color);
+  display: flex;
+  justify-content: center;
+}
+
+.trebol {
+  width: 21px;
+  height: auto;
+  margin-top: -3px;
+  margin-left: 13px;
+  display: none;
+}
+
+/* fin */
+
+.generate-phrase {
+  font-family: "futura";
+}
+
+button.generate-phrase {
+  font-weight: 700;
+  padding: 10px;
+  border: 5px solid white;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+  border-radius: 10px;
+  transition: 200ms ease-in;
+  user-select: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button.generate-phrase:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+button.generate-phrase:active {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(10px);
+}
+
+button.generate-phrase:focus {
+  outline: 0;
+}
+
+@keyframes shake {
+  20% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+  70% {
+    transform: rotate(2deg);
+  }
+}
+
+#reveal_message {
+  display: block;
+}
+
+/* * Fortune */
+#fortuneModal {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Disable scroll */
+}
+
+#modal-fortune-content {
+  background-color: var(--white-color);
+  border: 1px solid #888;
+  max-width: 30rem;
+  padding: 20px 30px 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.modal-buttons a {
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.modal-buttons img {
+  width: 40px; /* Ajustar según el tamaño de tus íconos */
+  height: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+span.close-fortune {
+  top: 5px;
+  right: 10px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-fortune:hover,
+.close-fortune:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-message {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/** Imagen generada*/
+.btns-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.image-container {
+  border: 1px solid white;
+  background-color: gray;
+  display: none;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#view-button {
+  display: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--high-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "futura";
+  font-weight: 100;
+}
+
+#web-share-button {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: var(--high-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "futura";
+  font-weight: 100;
+}
+
+#share-button {
+  display: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: var(--grey-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "futura";
+  font-weight: 100;
+}
+
+#web-share-button:hover,
+#view-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transform: scale(1.1);
+  font-weight: 500;
+}
+
+#share-button:hover {
+  background-color: var(--grey-color);
+  color: var(--bg-color);
+  transform: scale(1.1);
+  font-weight: 500;
+}
+
+#share-button:active,
+#web-share-button:active,
+#view-button:active {
+  background-color: var(--light-color);
+  color: var(--white-color);
+  transform: scale(1.1);
+}
+
+/* Modal de imagen */
+#imageModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modal-image-content {
+  margin: 0 auto;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 60rem;
+}
+
+#modal-image {
+  max-width: 100%;
+  max-height: 100vh; /* Ajusta el tamaño máximo de la imagen */
+  border-radius: 10px; /* Borde redondeado opcional */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* *Fin de imagen generada  */
+
+/* Powered by */
+.madre {
+  margin-top: 30px;
+  text-align: center;
+  color: black;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+}
+
+.madre a {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+.madre a:visited {
+  color: var(--numbers-color);
+}
+
+.flag {
+  margin: 0 5px;
+}
+
+/* Fin powered by */
+
+/*? Modal styles image*/
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Disable scroll */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-content {
+  background-color: var(--white-color);
+  border: 1px solid #888;
+  max-width: 30rem;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.close {
+  color: var(--bg-color);
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: -1rem;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--hover-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dropdown Menu */
+.language-selector {
+  position: absolute;
+  top: 3rem;
+  right: 100rem;
+}
+
+.language-selector:hover .dropdown-content {
+  display: block;
+}
+
+.language-selector:hover .dropbtn {
+  background-color: var(--hover-color);
+}
+
+#modal-message #boldText {
+  font-weight: bold;
+}
+
+/** nuevo togle */
+#languageSwitch {
+  --s: 50px; /* Adjust this to control the size */
+  height: calc(var(--s) + var(--s) / 2);
+  width: auto; /* Some browsers need this */
+  aspect-ratio: 2;
+  /*   border: 4px var(--white-color) solid; */
+  border-radius: var(--s);
+  margin: calc(var(--s) / 2);
+  display: grid;
+  cursor: pointer;
+  background-color: var(--high-color);
+  box-sizing: content-box;
+  overflow: hidden;
+  transition: 0.3s 0.1s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+#languageSwitch:before {
+  content: "ES";
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: var(--s);
+  height: var(--s);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--s) / 10);
+  --_g: radial-gradient(
+    circle closest-side at calc(100% - var(--s) / 2) 50%,
+    #000 96%,
+    #0000
+  );
+  background: var(--_g) 0 / var(--_p, var(--s)) 100% no-repeat content-box,
+    var(--_g) var(--_p, 0) / var(--s) 100% no-repeat content-box, #fff;
+  mix-blend-mode: darken;
+  transition: 0.4s, background-position 0.4s 0.1s,
+    padding
+      cubic-bezier(0, calc(var(--_i, -1) * 200), 1, calc(var(--_i, -1) * 200))
+      0.25s 0.1s,
+    left 0.4s, content 0.4s; /* Added transitions for left and content */
+}
+
+#languageSwitch:checked {
+  background-color: var(--light-color);
+}
+
+#languageSwitch:checked:before {
+  content: "EN"; /* Content when checked */
+  left: 75%;
+  --_p: 100%;
+  --_i: 1;
+  padding: calc(var(--s) / 10 + 0.05px) calc(var(--s) / 10);
+}
+
+/* CSS de ongoing */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.fortune-p {
+  margin-bottom: 20px;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+main ol {
+  padding-left: 20px;
+}
+
+main ol p {
+  max-width: calc(100% - 40px);
+}
+
+.fortune-li ul li {
+  margin-left: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 1rem 5% 3rem 0;
+  width: 100%;
+  font-weight: 900;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  transform: translateX(calc(100% + 3.2rem)) translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: #333;
+  border-radius: 50px;
+  transition: transform 0.25s 0.25s cubic-bezier(0, 0, 0.5, 2),
+    width 0.25s cubic-bezier(0, 0, 0.5, 2);
+}
+
+.button:hover::before {
+  width: 100%;
+  transform: translateX(-18px) translateY(-50%);
+  transition: transform 0.25s cubic-bezier(0, 0, 0.5, 2),
+    width 0.25s 0.25s cubic-bezier(0, 0, 0.5, 2);
+}
+
+.button i {
+  margin-left: 5px;
+  transition: transform 0.25s 0.4s cubic-bezier(0, 0, 0.5, 2);
+}
+
+.button:hover i {
+  transform: translateX(3px);
+}
+
+.button:active {
+  scale: 1.1;
+}
+
+.button-container a {
+  text-decoration: none;
+}
+
+/* ? Botón ver en JS */
+/* Modal de Ver */
+/* Estilos para el modal de imagen */
+#imageModal {
+  display: none; /* Por defecto oculto */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.modal-content {
+  padding: 10px;
+  font-size: 14px;
+}
+
+#modal-image {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: calc(
+    30% - 100px
+  ); /* Altura máxima del contenido (ajustable según necesidades) */
+}
+
+#modal-image-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#modal-image-content .close:hover,
+#modal-image-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Bloquear switch */
+.disabled {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+  opacity: 0.5; /* Añadir para mejorar la visibilidad de la deshabilitación */
+  pointer-events: none; /* Asegura que el botón no reciba eventos de puntero */
+}
+
+/* !!!!!!!! Estilos responsive !!!!!!!!!*/
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+    background-color: #333;
+    border-radius: 20px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  #future-designs {
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  main ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .music-icon img {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    width: 35px; /* Ajusta el tamaño del ícono */
+    height: 35px; /* Ajusta el tamaño del ícono */
+  }
+
+  .phrase {
+    margin-top: 0rem;
+    min-height: 5rem;
+    min-width: 5rem;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.5rem;
+  }
+
+  .cat > img {
+    width: 8rem;
+    margin-top: 5rem;
+  }
+
+  #title-text {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  #fortune-text {
+    max-width: 700px;
+    padding-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+
+  #slogan-desktop {
+    display: none;
+  }
+
+  #slogan-mobile {
+    display: block;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+  }
+
+  #view-button {
+    margin-top: 10px;
+  }
+
+  button.generate-phrase {
+    margin-top: 2rem;
+    font-size: 1rem;
+    padding: 8px;
+    border: 5px solid white;
+  }
+
+  #modal-fortune-content {
+    max-width: 21rem;
+  }
+
+  #modal-message {
+    font-size: 1rem;
+  }
+
+  #modal-image-content {
+    max-width: 18rem;
+    padding: 1.2rem;
+  }
+
+  #web-share-button {
+    font-size: 1rem;
+    padding: 10px 32px;
+  }
+
+  .trebol {
+   width: 20px;
+    height: 20px;
+    margin-top: 1px;
+  }
+}
+
+.gif-container img {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.language-selector {
+  max-width: 100%;
+  right: 2.5rem;
+  top: 2rem;
+}
+
+#languageSwitch {
+  --s: 30px; /* Reduce size for mobile */
+  margin: calc(var(--s) / 4); /* Adjust margin for mobile */
+}
+
+#languageSwitch:before,
+#languageSwitch:checked:before {
+  font-size: 0.8em; /* Adjust font size for mobile */
+}
+
+.madre {
+  line-height: 1.2rem;
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .cat > img {
+    width: 150px;
+  }
+
+  #title-text {
+    font-size: 2.5rem;
+  }
+
+  #fortune-text {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+
+  .generate-phrase {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  #modal-fortune-content {
+    max-width: 30rem;
+  }
+
+  #modal-image-content {
+    max-width: 20rem;
+    padding: 1rem;
+  }
+
+  #slogan-line1,
+  #slogan-line2 {
+    display: inline; /* Mostrar en línea en pantallas grandes */
+  }
+
+  #slogan-container br {
+    display: none; /* Ocultar el salto de línea en pantallas grandes */
+  }
+}
+
+/* Estilos para pantallas más grandes que 1440px */
+@media screen and (min-width: 1441px) {
+  .slogan {
+    font-family: "futura-medium-italic";
+    font-size: 1.1rem;
+  }
+  .generate-phrase {
+    margin: 15px;
+  }
+
+  #title-text {
+    font-size: 2.5rem;
+  }
+
+  #fortune-text {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  #modal-fortune-content {
+    max-width: 40rem;
+  }
+
+  #modal-image-content {
+    max-width: 30rem;
+    padding: 1rem;
+  }
+
+  .madre {
+    margin-top: 50px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">Lucky Cookie ◡ Find your fortune</title>
+    <link rel="icon" href="img/fortune-cookie-one.png" type="image/x-icon" />
+
+    <!-- Meta tags -->
+    <!-- Primary Meta Tags -->
+    <title>Lucky Cookie ◡ Motivación crocante</title>
+    <meta name="title" content="Lucky Cookie ◡ Motivación crocante" />
+    <meta
+      name="description"
+      content="Lucky Cookie está llena de motivación crocante y desafíos a la suerte y al azar. Dejá que el destino hable por vos y te lleve a lugares desconocidos. Llamale misterio, casualidad o suerte... Pero sacate las ganas de saber qué puede pasar en tu día a día."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://luckycookie.app/"
+    />
+    <meta property="og:title" content="Lucky Cookie ◡ Motivación crocante" />
+    <meta
+      property="og:description"
+      content="Lucky Cookie está llena de motivación crocante y desafíos a la suerte y al azar. Dejá que el destino hable por vos y te lleve a lugares desconocidos. Llamale misterio, casualidad o suerte... Pero sacate las ganas de saber qué puede pasar en tu día a día."
+    />
+    <meta
+      property="og:image"
+      content="https://luckycookie.app/img/banner_metaTags.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://luckycookie.app/"
+    />
+    <meta
+      property="twitter:title"
+      content="Lucky Cookie ◡ Motivación crocante"
+    />
+    <meta
+      property="twitter:description"
+      content="Lucky Cookie está llena de motivación crocante y desafíos a la suerte y al azar. Dejá que el destino hable por vos y te lleve a lugares desconocidos. Llamale misterio, casualidad o suerte... Pero sacate las ganas de saber qué puede pasar en tu día a día."
+    />
+    <meta
+      property="twitter:image"
+      content="https://luckycookie.app/img/banner_metaTags.jpg"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+
+
+  <body>
+    <!-- Círculos prueba -->
+    <div class="background-circles">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <!-- Intro Frase -->
+    <div class="intro">
+      <div class="cat">
+        <img src="img/new_cat_2.png" alt="cat with a fortune cookie" />
+      </div>
+      <h1 id="title-text"></h1>
+      <h3 id="slogan-desktop" class="slogan"></h3>
+      <h3 id="slogan-mobile" class="slogan"></h3>
+    <div class="phrase">
+      <h2 class="fortune"><span id="fortune-text"></span></h2>
+      <h2 class="reveal-message" id="reveal-message"></h2>
+      <h3 class="numbers"><span id="fortune-numbers" ></span><img src="/img/trebol.png" alt="trebol suerte" class="trebol"></h3>
+    </div>
+    <button class="generate-phrase" id="reveal-button"></button>
+
+    <!-- Fortune Modal -->
+    <div id="fortuneModal" class="fortuneModal">
+      <div id="modal-fortune-content" class="modal-contentF">
+        <span class="close-fortune">&times;</span>
+        <p id="modal-message"></p>
+      </div>
+    </div>
+
+    <div class="btns-container">
+      <button id="view-button" style="display: none"></button>
+    </div>
+
+    <!-- Image modal -->
+    <div id="imageModal" class="modal">
+      <div id="modal-image-content" class="modal-content">
+        <span class="close">&times;</span>
+        <img
+          id="modal-image"
+          alt="Fortune Image"
+          style="max-width: 100%; max-height: 100%"
+        />
+
+        <div class="modal-buttons">
+          <!-- Download -->
+          <button id="share-button" class="share" style="display: none">
+            DESCARGAR
+          </button>
+          <!-- Compartir -->
+          <button id="web-share-button" class="share" style="display: none"> 
+            Compartir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor para la imagen generada y botón de compartir -->
+    <div class="image-container">
+      <canvas id="canvas" width="1080" height="1920"></canvas>
+    </div>
+
+    <!-- Language Switch -->
+    <div class="language-selector">
+      <input type="checkbox" id="languageSwitch" />
+      <label for="languageSwitch" id="switchLabel"></label>
+    </div>
+
+    <!-- Music -->
+    <div class="music-icon">
+      <img id="play-pause-icon" src="img/boton-de-play.png" alt="Play" style="cursor: pointer;">
+      <audio id="audio" src="mus/calm.mp3"></audio>
+  </div>
+  
+
+    <!-- Credits -->
+    <div class="madre">
+      Developed by
+      <a href="https://lauramujica.com/" target="_blank"><u>Lau</u></a> <img class="flag" src="img/favicon-16x16.png" alt="Ícono" style="width: 16px; height: 16px; vertical-align: middle;">  Music by <a href="https://soundcloud.com/fm_freemusic/calm-soothing-ambient-music-for-relaxation-and-meditation-no-copyright-music?si=66799b9e292944188edc1e15191a725a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"><u>Soundcloud</u></a>
+    </div>
+
+    <script src="fortunes-en.js"></script>
+    <script src="fortunes-es.js"></script>
+    <script defer src="index.js"></script>
+  </body>
+</html>
