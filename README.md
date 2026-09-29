@@ -1,6 +1,6 @@
 # Lucky Cookie
 
-![Banner](./img/Banner.jpg)
+![Banner](./img/github_banner-lucky-cookie.png)
 
 **Live project:** [luckycookie.app](https://luckycookie.app)
 
